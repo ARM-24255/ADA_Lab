@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 #define MAX 30
@@ -10,18 +10,15 @@ typedef struct {
 Edge edges[MAX], result[MAX];
 int parent[MAX];
 
-
 int find(int i) {
     while (parent[i] != i)
         i = parent[i];
     return i;
 }
 
-
 void unionSet(int i, int j) {
     parent[i] = j;
 }
-
 
 void sortEdges(int e) {
     int i, j;
@@ -76,4 +73,4 @@ int main() {
     printf("Total cost = %d\n", cost);
 
     return 0;
-}
+}*/
