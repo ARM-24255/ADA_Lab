@@ -1,0 +1,34 @@
+bool canFinish(int numCourses, int** prerequisites, int prerequisitesSize, int* prerequisitesColSize) {
+    int inDegree[2000] = {0};
+    int queue[2000], front, rear, count;
+    front = rear = count = 0;
+
+    for (int i = 0; i < prerequisitesSize; i++) {
+        int course = prerequisites[i][0];
+        inDegree[course]++;
+    }
+
+    for (int i = 0; i < numCourses; i++) {
+        if (inDegree[i] == 0) {
+            queue[rear++] = i;
+        }
+    }
+
+    while (front < rear) {
+        int currCourse = queue[front++];
+        count++;
+        for (int i = 0; i < prerequisitesSize; i++) {
+            if (prerequisites[i][1] == currCourse) {
+                int depCourse = prerequisites[i][0];
+                inDegree[depCourse]--;
+                
+                
+                if (inDegree[depCourse] == 0) {
+                    queue[rear++] = depCourse;
+                }
+            }
+        }
+    }
+
+    return count == numCourses;
+}
