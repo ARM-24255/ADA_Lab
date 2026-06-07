@@ -70,7 +70,7 @@ int main(){
 
     printf("\nSorted array elements: ");
 
-    for(int i=n-1;i>=0;i--){   // descending output like your program
+    for(int i=n-1;i>=0;i--){   
         printf("%d ",arr[i]);
     }
 
